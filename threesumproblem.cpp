@@ -6,24 +6,26 @@ problem:- given an array and a vcalaue ,
  using namespace std;
   int main(){cout<<"input size of array"<<endl;
      int n; cin>>n;
+     cout<<"input element of array"<<endl;
      int arr[n];
      for(int i=0;i<n;i++){
         cin>>arr[i];
-     }
-     label:
-     int m; 
-    cout<<"plese enter set size after that \n plese enter value which you want to cheak"<<endl;
-    cin>>m;
-    int brr[m];
-    int ans=0;
+     };
+     int target;
+     cout<<"plese enter target"<<endl;
+     cin>>target;
+     
+    
+    bool ans=false;
 
     for(int i=0;i<n;i++){
-        for(int j=0;j<n; j++){
-        if(arr[i]==brr[j]){ans++;}
-    }}
-    if(ans==m){cout<<"yes these value in array";}
+        for(int j=i+1;j<n; j++){
+         for(int k=j+1;k<n;k++){
+       if(arr[i]+arr[j]+arr[k]==target){ ans=true;}
+    }}}
+    if(ans==true){cout<<"yes these value sum is  in array";}
     
-    else{cout<<"no these is not found in array";}
+    else{cout<<"no these value sum is not found in array";}
 
   
 
